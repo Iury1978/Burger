@@ -1,3 +1,4 @@
+import { API_URL, PREFIX_PRODUCT } from "./const.js";
 import {
   ingredientsList,
   modalProductTitle,
@@ -5,17 +6,23 @@ import {
   modalProductDescription,
   ingredientsCalories,
   modalProductPriceCount,
-  modalProduct
+  modalProduct,
+  modalProductBtn,
 } from "./elements.js";
+import { getData } from "./getData.js";
 
 // функция заполнения модального окна при его открытии
-export const openModal = (product) => {
+export const openModal = async (id) => {
+  const product = await getData(`${API_URL}${PREFIX_PRODUCT}/${id}`);
   modalProductTitle.textContent = product.title;
-  modalProductImage.src = product.image;
+  modalProductImage.src = `${API_URL}/${product.image}`;
   modalProductDescription.textContent = product.description;
   modalProductPriceCount.textContent = product.price;
-  ingredientsCalories.textContent =
-    `${product.weight}` + `г, ккал ` + `${product.calories}`;
+  // передаем в дата аттрибут кнопки добавить в модалке  айдишку товара
+  modalProductBtn.dataset.idProduct = product.id;
+  
+
+  ingredientsCalories.textContent = `${product.weight}г, ккал ${product.calories}`;
 
   ingredientsList.textContent = "";
 

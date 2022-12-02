@@ -13,3 +13,12 @@ export const navigationList = document.querySelector(".navigation__list");
 export const navigationListItems = document.querySelectorAll(".navigation__button");
 
 export const catalogTitle = document.querySelector(".catalog__title");
+
+export const modalProductBtn = document.querySelector(".modal-product__btn");
+// селектор, что бы выбрать счетчик именно в нужном модальном окне
+export const countAmount = document.querySelector(".modal-product .count__amount");
+
+// корзина. 
+export const orderCount = document.querySelector(".order__count");
+export const orderList = document.querySelector(".order__list");
+export const orderTotalAmount = document.querySelector(".order__total-amount");
