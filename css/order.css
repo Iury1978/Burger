@@ -12,6 +12,7 @@
   background: #FFFFFF;
   border-radius: 12px;
   padding: 16px 10px;
+  z-index: 10;
 }
 
 .order__wrap-title {
@@ -19,6 +20,11 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.order__wrap-title:hover .order__title {
+  color: #FFAB08;
 }
 
 .order__title {
@@ -50,8 +56,6 @@
 .order__list {
   margin-bottom: 16px;
 }
-
-
 
 .order__item {
   padding: 15px 0;
@@ -123,6 +127,7 @@
 .order__submit:disabled {
   background-color: #F9F9F9;
   color: #ACACAC;
+  cursor: no-drop;
 }
 
 .order__appeal {
@@ -158,17 +163,20 @@
     display: block;
   }
 
-
-
   .order__wrap-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 12px;
+    cursor: default;
   }
 
   .order__title {
     font-size: 24px;
+  }
+
+  .order__wrap-title:hover .order__title {
+    color: inherit;
   }
 
   .order__count {
@@ -177,8 +185,6 @@
     width: 41px;
     height: 20px;
   }
-
-
 
   .order__list {
     margin-bottom: 16px;

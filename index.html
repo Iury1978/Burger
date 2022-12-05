@@ -88,12 +88,12 @@
             <div class="order__wrap-title">
               <h2 class="order__title">Корзина</h2>
 
-              <span class="order__count">4</span>
+              <span class="order__count">0</span>
             </div>
 
             <div class="order__wrap-list">
               <ul class="order__list">
-                <li class="order__item">
+                <!-- <li class="order__item">
                   <img src="img/burger1.jpg" alt="Супер сырный" class="order__image">
 
                   <div class="order__product">
@@ -151,14 +151,14 @@
 
                     <button class="count__plus">+</button>
                   </div>
-                </li>
+                </li> -->
               </ul>
 
               <div class="order__total">
                 <p>Итого</p>
 
                 <p>
-                  <span class="order__total-amount">1279</span>
+                  <span class="order__total-amount">0</span>
                   <span class="currency">₽</span>
                 </p>
               </div>
@@ -173,7 +173,7 @@
           <h3 class="catalog__title">Бургеры</h3>
 
           <ul class="catalog__list">
-            <li class="catalog__item">
+            <!-- <li class="catalog__item">
               <article class="product">
                 <img class="product__image" src="img/burger6.jpg" alt="Мясная бомба">
 
@@ -267,7 +267,7 @@
 
                 <button class="product__add">Добавить</button>
               </article>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -386,13 +386,13 @@
 
         <form class="modal-delivery__form" id="delivery">
           <fieldset class="modal-delivery__fieldset-input">
-            <input class="modal-delivery__input" type="text" placeholder="Ваше имя">
-            <input class="modal-delivery__input" type="tel" placeholder="Телефон">
+            <input class="modal-delivery__input" type="text" name="name" required placeholder="Ваше имя">
+            <input class="modal-delivery__input" type="tel" name="phone" required placeholder="Телефон">
           </fieldset>
 
           <fieldset class="modal-delivery__fieldset-radio">
             <label class="modal-delivery__label">
-              <input class="modal-delivery__radio" type="radio" name="format" value="pickup">
+              <input class="modal-delivery__radio" type="radio" name="format" value="pickup" checked>
               <span>Самовывоз</span>
             </label>
 
@@ -402,10 +402,12 @@
             </label>
           </fieldset>
 
-          <fieldset class="modal-delivery__fieldset-input">
-            <input class="modal-delivery__input" type="text" placeholder="Улица, дом, квартира">
-            <input class="modal-delivery__input modal-delivery__input_half" type="number" placeholder="Этаж">
-            <input class="modal-delivery__input modal-delivery__input_half" type="number" placeholder="Домофон">
+          <fieldset
+          class="modal-delivery__fieldset-input modal-delivery__fieldset-input_hide"
+          name="address-info">
+            <input class="modal-delivery__input" type="text" name="address" placeholder="Улица, дом, квартира">
+            <input class="modal-delivery__input modal-delivery__input_half" name="floor" type="number" placeholder="Этаж">
+            <input class="modal-delivery__input modal-delivery__input_half" name="intercom" type="number" placeholder="Домофон">
           </fieldset>
         </form>
 
